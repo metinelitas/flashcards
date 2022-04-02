@@ -1,4 +1,4 @@
-document.getElementById("text_box").innerHTML = 'Show word here';
+document.getElementById("text_box").innerHTML = 'j: next  k:reveal';
 
 var arr;
 var index = 0;
@@ -10,7 +10,7 @@ $(document).keydown(function(e) {
     // console.log(e.which);
 
 
-    if (e.which == 75) // k
+    if (e.which == 74) // j
     {
         while(index == prev_index)
             index = Math.floor(Math.random()*arr.length)
@@ -18,7 +18,7 @@ $(document).keydown(function(e) {
         var item = arr[index];
         $('#text_box').html(item[0]);
     }
-    if (e.which == 73)
+    if (e.which == 75) //k
     {
         var item = arr[index];
         $('#text_box').html(item[1]);
