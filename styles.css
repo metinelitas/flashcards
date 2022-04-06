@@ -15,6 +15,13 @@ p {
   align-items: center;
 }
 
+#button_wiki_dutch {
+  font-size: larger;
+}
+#button_wiki_english { 
+  font-size: larger;
+}
+
 .mobile_buttons {
   display: none;
 }
@@ -36,6 +43,7 @@ p {
 
   #button_mobile_next{
     display:inline-block;
+    font-size: larger;
      padding:0.3em 1.2em;
      margin:0 0.3em 0.3em 0;
      border-radius:2em;
@@ -53,6 +61,7 @@ p {
     }
     #button_mobile_translate{
       display:inline-block;
+      font-size: larger;
        padding:0.3em 1.2em;
        margin:0 0.3em 0.3em 0;
        border-radius:2em;
