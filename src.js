@@ -50,18 +50,33 @@ function next() {
             index = Math.floor(Math.random() * arr.length)
     }
     prev_index = index;
-    var item = arr[index];
-    $('#text_box').html(item[0]);
+    showWord();
+    state = 0;
 }
 
-function reveal() {
+function showWord() {
     var item = arr[index];
+    $('#text_box').html(item[0]);
+    var element = document.getElementById("text_box");
+    element.style.backgroundColor = "#FFFFFF";
+}
+
+function showTranslation() { 
+    var item = arr[index];
+    $('#text_box').html(item[1]);
+    var element = document.getElementById("text_box");
+    element.style.backgroundColor = "#deffde";
+}
+
+
+function reveal() {
+    
     if (state == 0) {
-        $('#text_box').html(item[0]);
+        showTranslation();
         state = 1;
     }
     else {
-        $('#text_box').html(item[1]);
+        showWord();
         state = 0;
     }
 
