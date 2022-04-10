@@ -15,10 +15,22 @@ p {
   align-items: center;
 }
 
+.youglish_buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #button_wiki_dutch {
   font-size: larger;
 }
 #button_wiki_english { 
+  font-size: larger;
+}
+#button_youglish_dutch {
+  font-size: larger;
+}
+#button_youglish_english { 
   font-size: larger;
 }
 

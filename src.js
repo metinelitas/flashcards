@@ -1,5 +1,7 @@
 document.getElementById("text_box").innerHTML = 'j:next  k:translation';
 
+var file_name = 'words.csv'
+
 var arr;
 var index = 0;
 var prev_index = 0;
@@ -19,10 +21,20 @@ $(document).keydown(function (e) {
     {
         reveal();
     }
+    if (e.which == 78) //n
+    {
+        openWikiDutch();
+    }
+    if (e.which == 79) //m
+    {
+        openWikiEnglish();
+    }
+
+
 });
 
 function readFile(callback) {
-    $.get('words.csv', function (data) {
+    $.get(file_name, function (data) {
         var arr = $.csv.toArrays(data);
 
         callback(arr);
@@ -39,6 +51,11 @@ function openWikiEnglish() {
     var url = "https://en.wiktionary.org/wiki/" + arr[index][0] + "#English"
     console.log("open wiki");
     console.log(url);
+    window.open(url);
+}
+
+function openYouglishDutch() { 
+    var url = "https://youglish.com/pronounce/" + arr[index][0] + "/dutch?"
     window.open(url);
 }
 
