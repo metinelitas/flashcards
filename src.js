@@ -59,6 +59,12 @@ function openYouglishDutch() {
     window.open(url);
 }
 
+function openYouglishEnglish() { 
+    var url = "https://youglish.com/pronounce/" + arr[index][0] + "/english?"
+    window.open(url);
+}
+
+
 function next() {
     if (arr.length == 1)
         index = 0
