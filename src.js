@@ -25,7 +25,7 @@ $(document).keydown(function (e) {
     {
         openWikiDutch();
     }
-    if (e.which == 79) //m
+    if (e.which == 77) //m
     {
         openWikiEnglish();
     }
