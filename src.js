@@ -1,6 +1,6 @@
 document.getElementById("text_box").innerHTML = 'j:next  k:translation';
 
-var file_name = 'words.csv'
+var file_name = 'common.csv'
 
 var arr;
 var index = 0;
