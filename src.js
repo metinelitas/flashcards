@@ -1,6 +1,6 @@
 document.getElementById("text_box").innerHTML = 'j:next  k:translation';
 
-var file_name = 'common.csv'
+var file_name = 'unit2_vocab1.csv'
 
 var arr;
 var index = 0;
@@ -66,6 +66,7 @@ function openYouglishEnglish() {
 
 
 function next() {
+    $('#text_box2').html("");
     if (arr.length == 1)
         index = 0
     else {
@@ -86,7 +87,7 @@ function showWord() {
 
 function showTranslation() { 
     var item = arr[index];
-    $('#text_box').html(item[1]);
+    $('#text_box2').html(item[1]);
     var element = document.getElementById("text_box");
     element.style.backgroundColor = "#deffde";
 }
