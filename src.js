@@ -1,6 +1,6 @@
 document.getElementById("text_box").innerHTML = 'j:next  k:translation';
 
-var file_name = 'unit2_vocab1.csv'
+var file_name = 'unit2_vocab2.csv'
 
 var arr;
 var index = 0;
@@ -41,26 +41,45 @@ function readFile(callback) {
     }, "text");
 }
 
+function removeArticle(word) {
+
+    splitted = word.split(" ")
+
+    if (splitted.length == 2) {
+        if (splitted[0] == "het" || splitted[0] == "de") {
+            splitted.shift()
+            return splitted
+        }
+    }
+
+    return word
+}
+
 function openWikiDutch() {
-    var url = "https://en.wiktionary.org/wiki/" + arr[index][0] + "#Dutch"
+    word = removeArticle(arr[index][0])
+
+    var url = "https://en.wiktionary.org/wiki/" + word + "#Dutch"
     console.log("open wiki");
     console.log(url);
     window.open(url);
 }
 function openWikiEnglish() {
-    var url = "https://en.wiktionary.org/wiki/" + arr[index][0] + "#English"
+    word = arr[index][0]
+    var url = "https://en.wiktionary.org/wiki/" + word + "#English"
     console.log("open wiki");
     console.log(url);
     window.open(url);
 }
 
-function openYouglishDutch() { 
-    var url = "https://youglish.com/pronounce/" + arr[index][0] + "/dutch?"
+function openYouglishDutch() {
+    word = removeArticle(arr[index][0])
+    var url = "https://youglish.com/pronounce/" + word + "/dutch?"
     window.open(url);
 }
 
-function openYouglishEnglish() { 
-    var url = "https://youglish.com/pronounce/" + arr[index][0] + "/english?"
+function openYouglishEnglish() {
+    word = arr[index][0]
+    var url = "https://youglish.com/pronounce/" + word + "/english?"
     window.open(url);
 }
 
@@ -85,16 +104,16 @@ function showWord() {
     element.style.backgroundColor = "#FFFFFF";
 }
 
-function showTranslation() { 
+function showTranslation() {
     var item = arr[index];
     $('#text_box2').html(item[1]);
-    var element = document.getElementById("text_box");
-    element.style.backgroundColor = "#deffde";
+    var element = document.getElementById("text_box2");
+    element.style.backgroundColor = "#FFFFFF";
 }
 
 
 function reveal() {
-    
+
     if (state == 0) {
         showTranslation();
         state = 1;
