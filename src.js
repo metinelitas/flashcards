@@ -1,6 +1,6 @@
 document.getElementById("text_box").innerHTML = 'j:next  k:translation';
 
-var file_name = 'unit2_vocab2.csv'
+var file_name = 'vocab/unit2_vocab2.csv'
 
 var arr;
 var index = 0;
